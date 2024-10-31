@@ -11,17 +11,12 @@ def get_fibonacci_number(position):
         return sequence[position - 1]
 
 def get_fibonacci_number_sequence(number):
-    if number <= 0:
-        return []
-    elif number == 1:
-        return [0]
-    elif number == 2:
-        return [0, 1]
-    else:
-        sequence = get_fibonacci_number_sequence(number - 1)
-        sequence.append(sequence[-1] + sequence[-2])
-        return sequence
-
+    temp_1, temp_2 = 0, 1
+    sequence = []
+    while temp_1 <= number:
+        sequence.append(temp_1)
+        temp_1, temp_2 = temp_2, temp_1 + temp_2
+    return sequence
 if __name__ == "__main__":
     x = int(1)
     user_position = input("Please enter a positive integer: ")
@@ -32,7 +27,7 @@ if __name__ == "__main__":
             user_position = int(user_position)
         else:
             num_at_pos = get_fibonacci_number(user_position)
-            sequence = get_fibonacci_number_sequence(user_position)
             print(num_at_pos)
+            sequence = get_fibonacci_number_sequence(num_at_pos)
             print(sequence)
             x = 0
