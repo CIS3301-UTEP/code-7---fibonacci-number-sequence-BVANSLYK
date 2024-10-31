@@ -27,7 +27,6 @@ if __name__ == "__main__":
             user_position = int(user_position)
         else:
             num_at_pos = get_fibonacci_number(user_position)
-            print(num_at_pos)
             sequence = get_fibonacci_number_sequence(num_at_pos)
             print(sequence)
             x = 0
